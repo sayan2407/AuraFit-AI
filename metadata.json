@@ -1,0 +1,6 @@
+{
+  "name": "AI Fitness Coach",
+  "description": "Personalized AI workout and meal plan generator with cultural & religious dietary options, animated exercise form guides, workout logger, and AI coach chat with meal picture nutrient scanner.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
