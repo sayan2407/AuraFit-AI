@@ -384,7 +384,11 @@ Return strictly JSON.
   }
 });
 
-// Configure Vite middleware or Static Server
+// Export app for serverless platforms like Vercel
+export default app;
+export { app };
+
+// Configure Vite middleware or Static Server for local/container dev & production
 async function startServer() {
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
@@ -405,4 +409,8 @@ async function startServer() {
   });
 }
 
-startServer();
+// Only start the standalone listener if not running in Vercel serverless environment
+if (process.env.VERCEL !== '1' && !process.env.NOW_REGION) {
+  startServer();
+}
+
